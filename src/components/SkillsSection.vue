@@ -47,9 +47,12 @@ const skillList = ref([
 <style lang="scss">
 .skills-section {
   display: flex;
-  flex-direction: column;
+  width: 100%;
   gap: 28px;
   align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 
 </style>

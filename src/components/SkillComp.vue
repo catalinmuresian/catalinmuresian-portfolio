@@ -18,11 +18,11 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  width: 170px;
+  width: 152px;
   .skill-name {
     color: $white;
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 40px;
     letter-spacing: -1px;

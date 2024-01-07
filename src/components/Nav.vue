@@ -46,7 +46,7 @@ function navToMainPage () {
     .social-logos {
       display: flex;
       justify-content: space-between;
-      width: 100px;
+      width: 70px;
       list-style-type: none;
       padding: 0;
       a:hover path {

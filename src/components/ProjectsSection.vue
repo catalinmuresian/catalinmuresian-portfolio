@@ -15,8 +15,6 @@
               <q-icon color="white" name="search" />
             </template>
           </q-input>
-
-
         </div>
         <div class="sort">
           <span>Sort:</span>
@@ -35,6 +33,15 @@
         </div>
       </div>
     </div>
+    <div class="projects-list">
+      <ProjectCard
+        v-for="{img, title, skills} in projectsList"
+        :key="title"
+        :img="img"
+        :title="title"
+        :skills="skills"
+      />
+    </div>
 
   </div>
 </template>
@@ -42,6 +49,7 @@
 <script setup>
 
 import {ref} from "vue";
+import ProjectCard from './ProjectCard'
 
 const search = ref('')
 const sort = ref('All')
@@ -64,11 +72,35 @@ const options = ref([
   },
 
 ])
+
+const projectsList = ref([
+  {
+    img: 'Bitmap.png',
+    title: 'TODO APP',
+    skills: ['HTML' , 'CSS', 'JavaScript']
+  },
+  {
+    img: 'Bitmap-1.png',
+    title: 'ENTERTAINMENT WEB APP',
+    skills: ['HTML' , 'CSS', 'JavaScript']
+  },
+  {
+    img: 'Bitmap-2.png',
+    title: 'MEMORY GAME',
+    skills: ['HTML' , 'CSS', 'JavaScript']
+  },
+  {
+    img: 'Bitmap-3.png',
+    title: 'ART Gallery',
+    skills: ['HTML' , 'CSS', 'JavaScript']
+  },
+])
 </script>
 
 <style lang="scss">
 .projects-section {
   .top {
+    margin-bottom: 40px;
     .functionalities {
       display: flex;
       flex-direction: row;
@@ -77,11 +109,15 @@ const options = ref([
       .search {
         color: white;
         .q-input {
-          max-width: 130px;
+          max-width: 170px;
+          .q-field__native {
+            font-weight: 700;
+            color: $white;
+          }
         }
       }
       .sort {
-       > span {
+        span {
           color: $grey;
           font-weight: 700;
           margin-right: 10px;
@@ -95,6 +131,12 @@ const options = ref([
         }
       }
     }
+  }
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
   }
 
 

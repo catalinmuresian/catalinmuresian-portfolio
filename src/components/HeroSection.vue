@@ -35,12 +35,10 @@
     }
     .q-btn {
       padding: 0;
-      color: var(--White, #FFF);
-      font-family: Space Grotesk;
+      color: $white;
       font-size: 14px;
-      font-style: normal;
       font-weight: 700;
-      line-height: 26px; /* 162.5% */
+      line-height: 26px;
       letter-spacing: 2.286px;
       border-bottom: 2px solid $yellow;
       border-radius: 0;
@@ -61,11 +59,11 @@
       margin-bottom: 30px;
     }
     p {
-      max-width: 300px;
+      max-width: 223px;
       color: #ffffff;
       font-size: 14px;
       mix-blend-mode: exclusion;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
 
     }
   }
