@@ -29,6 +29,9 @@
       bottom: 0;
       right: -16px;
       z-index: -1;
+      img {
+        width: 100%;
+      }
     }
     .q-btn {
       padding: 0;

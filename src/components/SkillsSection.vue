@@ -49,6 +49,7 @@ const skillList = ref([
   display: flex;
   flex-direction: column;
   gap: 28px;
+  align-items: center;
 }
 
 </style>

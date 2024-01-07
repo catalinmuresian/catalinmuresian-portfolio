@@ -17,7 +17,8 @@ const props = defineProps({
 .skill-comp {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  cursor: pointer;
+  width: 170px;
   .skill-name {
     color: $white;
     text-align: center;
@@ -27,11 +28,21 @@ const props = defineProps({
     letter-spacing: -1px;
   }
   .experience {
-    color: #afafaf;
+    color: #8f8f8f;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 26px;
+  }
+}
+.skill-comp:hover {
+  scale: 1.05;
+  transition: all 100ms ease-in;
+  .skill-name {
+    color: $yellow;
+  }
+  .experience {
+    color: $white;
   }
 }
 
