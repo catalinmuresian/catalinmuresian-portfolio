@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   width: 100%;
-
 }
 
 body {
@@ -12,64 +11,42 @@ body {
   background-size: cover;
 }
 
+h1, h2, h3, h4 {
+  color: $white;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Space Grotesk, sans serif;
+  font-style: normal;
+  letter-spacing: -1.5px;
+  font-weight: 700;
+}
+
 @media only screen and (min-width: 0) {
   h1 {
-    color: #fff;
-    font-feature-settings: 'clig' off, 'liga' off;
-
-    /* Heading (XL) */
-    font-family: Space Grotesk;
     font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
     line-height: 1.5rem;
-    letter-spacing: -2.5px;
   }
 
   h2 {
-    color: #fff;
-    font-feature-settings: 'clig' off, 'liga' off;
-    /* Heading (L) */
-    font-family: Space Grotesk;
     font-size: 48px;
-    font-style: normal;
     font-weight: 700;
-    line-height: 56px; /* 116.667% */
-    letter-spacing: -1.5px;
-
+    line-height: 56px;
   }
 
   h3 {
-    color: #fff;
-    font-family: Space Grotesk;
     font-size: 24px;
-    font-style: normal;
     font-weight: 700;
-    line-height: 32px; /* 133.333% */
-
   }
 
   h4 {
-    color: #fff;
-    font-family: Space Grotesk;
     font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 32px; /* 133.333% */
-
+    line-height: 32px;
   }
 
   p {
     color: #D9D9D9;
-    font-feature-settings: 'clig' off, 'liga' off;
-
-    /* Body */
-    font-family: Space Grotesk;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 22px; /* 155.556% */
-
+    line-height: 22px;
   }
 
 }
