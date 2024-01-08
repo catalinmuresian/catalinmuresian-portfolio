@@ -90,8 +90,8 @@ function handleSearch (event) {
 
   function search () {
     projectsListCopy.value.filter(obj => {
-      obj.title.toLowerCase().includes(event) && result.push(obj)
-      obj.skills.forEach(skill => skill.toLowerCase().includes(event) && result.push(obj))
+      obj.title.toLowerCase().includes(event.toLowerCase()) && result.push(obj)
+      obj.skills.forEach(skill => skill.toLowerCase().includes(event.toLowerCase()) && result.push(obj))
     })
     projectsList.value = result.filter(el => {
       const duplicate = seen.has(el.id);
@@ -136,7 +136,7 @@ watch(() => projectsList.value, (value) => {
   .projects-list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 60px;
     align-items: center;
   }
 
