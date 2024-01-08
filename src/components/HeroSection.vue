@@ -5,7 +5,11 @@
         <img src="../assets/cm-main-image.png" alt="">
       </div>
       <h1>Hi</h1><br>
-      <h1 class="name">I’m Catalin M.</h1>
+      <h1>I’m Catalin M.</h1>
+      <div class="role">
+        <hr>
+        <span>frontend developer</span>
+      </div>
       <p>Crafting pixel-perfect, user-centric web experiences with passion and proficiency.</p>
       <MainButton
         :name="'Contact Me'"
@@ -44,12 +48,22 @@ function handleButton (event) {
         width: 100%;
       }
     }
-    .name {
-      text-decoration: underline;
-      text-underline-offset: 0.3em;
-      text-decoration-color: $yellow;
-      text-decoration-thickness: 5px;
-      margin-bottom: 30px;
+    .role {
+      gap: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 10px;
+      hr {
+        margin: 0;
+        border: 2px solid $yellow;
+        width: 60px;
+      }
+      > span {
+        color: $yellow;
+        font-weight: 700;
+      }
     }
     p {
       max-width: 223px;
