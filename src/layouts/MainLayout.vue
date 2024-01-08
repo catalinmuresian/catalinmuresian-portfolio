@@ -5,7 +5,6 @@
       <router-view />
     </q-page-container>
     <Nav />
-
   </q-layout>
 </template>
 

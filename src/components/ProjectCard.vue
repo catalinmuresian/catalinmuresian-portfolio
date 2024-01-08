@@ -8,16 +8,35 @@
           :key="skill">{{ skill }}</p>
       </div>
     </div>
+    <div class="buttons">
+     <MainButton
+       :name="'View Project'"
+       @handle-button="handleButton('view-project')"
+     />
+      <MainButton
+        :name="'View Code'"
+        @handle-button="handleButton('view-code')"
+      />
+    </div>
   </div>
 </template>
 
 <script setup>
 
+import MainButton from './MainButton'
+
+const emit = defineEmits(['handle-button'])
+
 const props = defineProps({
   img: String,
   title: String,
-  skills: Array
+  skills: Array,
+  id: String
 })
+
+function handleButton (action) {
+  emit('handle-button', {action, id: props.id})
+}
 </script>
 
 <style lang="scss">
@@ -35,6 +54,10 @@ const props = defineProps({
         color: $grey;
       }
     }
+  }
+  .buttons {
+    display: flex;
+    gap: 30px;
   }
 
 }

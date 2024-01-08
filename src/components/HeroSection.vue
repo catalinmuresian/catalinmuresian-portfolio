@@ -6,14 +6,26 @@
       </div>
       <h1>Hi</h1><br>
       <h1 class="name">I’m Catalin M.</h1>
-      <p>Frontend developer with a good understanding of the big picture of web development, from an idea to a product.</p>
-      <q-btn flat color="white">Contact me</q-btn>
+      <p>Crafting pixel-perfect, user-centric web experiences with passion and proficiency.</p>
+      <MainButton
+        :name="'Contact Me'"
+        @handle-button="handleButton"
+      />
     </div>
   </div>
 
 </template>
 
 <script setup>
+
+import MainButton from '../components/MainButton'
+
+function handleButton (event) {
+    const element = document.getElementById('contact-section');
+    element.scrollIntoView({ behavior: 'smooth' });
+
+
+}
 </script>
 
 <style lang="scss">
@@ -26,31 +38,12 @@
     .portrait-image {
       max-width: 190px;
       position: absolute;
-      bottom: 0;
+      bottom: 20px;
       right: -16px;
-      z-index: -1;
       img {
         width: 100%;
       }
     }
-    .q-btn {
-      padding: 0;
-      color: $white;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 26px;
-      letter-spacing: 2.286px;
-      border-bottom: 2px solid $yellow;
-      border-radius: 0;
-      .q-focus-helper {
-        display: none;
-      }
-    }
-    .q-btn:hover {
-      color: $yellow!important;
-      transition: all 200ms ease-in-out;
-    }
-
     .name {
       text-decoration: underline;
       text-underline-offset: 0.3em;
@@ -61,10 +54,12 @@
     p {
       max-width: 223px;
       color: #ffffff;
-      font-size: 14px;
       mix-blend-mode: exclusion;
-      margin-bottom: 10px;
-
+      margin-bottom: 40px;
+    }
+    .main-button {
+      width: 180px;
+      margin: 0 auto;
     }
   }
 }

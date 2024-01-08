@@ -48,6 +48,8 @@ const skillList = ref([
 .skills-section {
   display: flex;
   width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
   gap: 28px;
   align-items: center;
   flex-wrap: wrap;

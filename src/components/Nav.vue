@@ -1,6 +1,6 @@
 <template>
-  <div class="nav">
-    <div class="container">
+  <div class="nav main-padding--none">
+    <div class="container main-padding">
       <h4 @click="navToMainPage()" class="logo">catalinmuresian</h4>
       <ul class="social-logos">
         <li>
@@ -35,8 +35,10 @@ function navToMainPage () {
 
 <style lang="scss">
 .nav {
+  background-color: #303030;
   .container {
-    padding: 10px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;

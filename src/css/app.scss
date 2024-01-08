@@ -15,9 +15,6 @@ body {
   color: $white;
 }
 
-.q-field--standard .q-field__control:before {
-  border-color: $dark-grey!important;
-}
 
 h1, h2, h3, h4 {
   color: $white;
@@ -33,7 +30,10 @@ hr {
 }
 
 .main-padding {
-  padding: 0 16px !important;
+  padding: 0 16px;
+}
+.main-padding--none {
+  margin: 0 -16px;
 }
 
 @media only screen and (min-width: 0) {
@@ -61,7 +61,7 @@ hr {
 
   p {
     color: #D9D9D9;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 22px;
   }

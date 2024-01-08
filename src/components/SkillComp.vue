@@ -17,8 +17,7 @@ const props = defineProps({
 .skill-comp {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-  width: 152px;
+  width: 150px;
   .skill-name {
     color: $white;
     text-align: center;
@@ -35,14 +34,19 @@ const props = defineProps({
     line-height: 26px;
   }
 }
-.skill-comp:hover {
-  scale: 1.05;
-  transition: all 100ms ease-in;
-  .skill-name {
-    color: $yellow;
+@media only screen and (min-width: 768px) {
+  .skill-comp {
+    cursor: pointer;
   }
-  .experience {
-    color: $white;
+  .skill-comp:hover {
+    scale: 1.05;
+    transition: all 100ms ease-in;
+    .skill-name {
+      color: $yellow;
+    }
+    .experience {
+      color: $white;
+    }
   }
 }
 
