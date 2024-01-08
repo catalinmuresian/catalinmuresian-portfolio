@@ -1,7 +1,10 @@
 <template>
   <div class="skill-comp">
+    <img style="width: 60px;"
+         :src="`${logo}`"
+         alt="logo">
     <span class="skill-name">{{ skill }}</span>
-    <span class="experience">{{ `${yearsExperience} Years Experience` }}</span>
+<!--    <span class="experience">{{ `${yearsExperience} Years Experience` }}</span>-->
   </div>
 </template>
 
@@ -9,21 +12,24 @@
 
 const props = defineProps({
   skill: String,
-  yearsExperience: String
+  yearsExperience: String,
+  logo: String
 })
 </script>
 
 <style lang="scss">
 .skill-comp {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  width: 150px;
+  width: 135px;
+  gap: 10px;
   .skill-name {
-    color: $white;
+    color: #adadad;
     text-align: center;
-    font-size: 28px;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 100%;
     letter-spacing: -1px;
   }
   .experience {

@@ -64,7 +64,7 @@ function submit () {
 <style lang="scss">
 .contact-section {
   padding-top: 60px;
-  background-color: $dark-grey;
+  background-color: #707070;
   .info {
     display: flex;
     flex-direction: column;
