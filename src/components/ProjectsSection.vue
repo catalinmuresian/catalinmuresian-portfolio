@@ -109,6 +109,7 @@ watch(() => projectsList.value, (value) => {
 <style lang="scss">
 .projects-section {
   margin-bottom: 60px;
+
   .top {
     margin-bottom: 40px;
     display: flex;
@@ -116,31 +117,52 @@ watch(() => projectsList.value, (value) => {
     justify-content: space-between;
     width: 100%;
     align-items: center;
+
     .search {
       .q-field--standard .q-field__control:before {
-        border-color: $dark-grey!important;
+        border-color: $dark-grey !important;
       }
+
       color: white;
+
       .q-input {
         max-width: 160px;
+
         .q-field__native {
           font-weight: 700;
           color: $white;
         }
+
         .q-icon {
           color: white;
         }
       }
     }
   }
+
   .projects-list {
     display: flex;
     flex-direction: column;
     gap: 60px;
     align-items: center;
+    h3 {
+      display: flex;
+      width: 100%;
+    }
   }
 
-
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 80px;
+    .projects-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 80px 40px;
+      justify-content: space-between;
+    }
+    .top {
+      margin-bottom: 60px;
+    }
+  }
 }
 
 </style>

@@ -1,10 +1,10 @@
 <template>
   <q-page class="flex main-page column">
-    <HeroSection />
+    <HeroSection class="main-padding main-max-width" />
     <hr>
-    <SkillsSection />
+    <SkillsSection class="main-padding main-max-width" />
     <hr>
-    <ProjectsSection />
+    <ProjectsSection class="main-padding main-max-width" />
     <ContactSection />
     <q-page-scroller position="bottom-right" :scroll-offset="250" :offset="[18, 18]">
       <q-btn fab icon="keyboard_arrow_up" style="width: 10px;" color="grey-6" />

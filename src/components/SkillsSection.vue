@@ -1,11 +1,10 @@
 <template>
   <div class="skills-section">
     <SkillComp
-      v-for="{name, yearsExperience, logo } in skillList"
+      v-for="{name, logo } in skillList"
       :key="name"
       :logo="logo"
       :skill="name"
-      :years-experience="yearsExperience"
     />
 
   </div>
@@ -20,32 +19,26 @@ import {ref} from "vue";
 const skillList = ref([
   {
     name: 'HTML',
-    yearsExperience: '4',
     logo: 'html.png'
   },
   {
     name: 'CSS',
-    yearsExperience: '4',
     logo: 'css.png'
   },
   {
     name: 'JavaScript',
-    yearsExperience: '4',
     logo: 'js.png'
   },
   {
     name: 'Vue js',
-    yearsExperience: '4',
     logo: 'vue.png'
   },
   {
     name: 'Quasar js',
-    yearsExperience: '4',
     logo: 'quasar.png'
   },
   {
     name: 'Nuxt js',
-    yearsExperience: '4',
     logo: 'nuxt.png'
   },
 ])
@@ -57,11 +50,18 @@ const skillList = ref([
   width: 100%;
   max-width: 620px;
   margin: 0 auto;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+  @media only screen and (min-width: 768px) {
+    max-width: 700px;
+    gap: 100px;
+  }
+  @media only screen and (min-width: 1440px) {
+    max-width: 800px;
+  }
 }
 
 </style>

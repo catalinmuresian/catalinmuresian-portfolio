@@ -1,10 +1,9 @@
 <template>
   <div class="skill-comp">
-    <img style="width: 60px;"
+    <img style="width: 80px;"
          :src="`${logo}`"
          alt="logo">
     <span class="skill-name">{{ skill }}</span>
-<!--    <span class="experience">{{ `${yearsExperience} Years Experience` }}</span>-->
   </div>
 </template>
 
@@ -12,7 +11,6 @@
 
 const props = defineProps({
   skill: String,
-  yearsExperience: String,
   logo: String
 })
 </script>
@@ -32,28 +30,25 @@ const props = defineProps({
     line-height: 100%;
     letter-spacing: -1px;
   }
-  .experience {
-    color: #8f8f8f;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 26px;
-  }
 }
 @media only screen and (min-width: 768px) {
   .skill-comp {
     cursor: pointer;
   }
   .skill-comp:hover {
-    scale: 1.05;
-    transition: all 100ms ease-in;
+    animation: tilt-shaking 0.25s infinite;
     .skill-name {
       color: $yellow;
     }
-    .experience {
-      color: $white;
-    }
   }
+
+}
+@keyframes tilt-shaking {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
 }
 
 </style>
