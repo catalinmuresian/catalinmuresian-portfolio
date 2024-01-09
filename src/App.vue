@@ -11,6 +11,12 @@
 
 <script setup>
 
+import {useStore} from "vuex";
+
+const { dispatch } = useStore()
+
+// dispatch('get_user_data')
+
 </script>
 
 <style lang="scss">

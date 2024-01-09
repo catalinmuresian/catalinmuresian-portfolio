@@ -68,7 +68,7 @@ function handleButton (event) {
           hr {
             margin: 0;
             border: 2px solid $yellow;
-            width: 60px;
+            width: 72px;
           }
 
           > span {
