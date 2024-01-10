@@ -34,22 +34,18 @@
 
 import MainButton from '../components/MainButton'
 
-function handleButton (event) {
+function handleButton () {
     const element = document.getElementById('contact-section');
     element.scrollIntoView({ behavior: 'smooth' });
-
-
 }
 </script>
 
 <style lang="scss">
 .hero-section {
   margin-top: 20px;
-
   .button-mobile {
     display: block;
   }
-
   .top {
     display: flex;
     flex-direction: row;
@@ -98,14 +94,11 @@ function handleButton (event) {
       }
     }
   }
-
   .main-button {
     width: 180px;
     margin: 0 auto;
     display: flex;
   }
-
-
   @media only screen and (min-width: 400px) {
     .top {
       .portrait-image {
@@ -141,7 +134,7 @@ function handleButton (event) {
           }
           p {
             max-width: 340px;
-            margin-bottom: 63px;
+            margin: 0;
           }
         }
         .button-tablet {
@@ -166,7 +159,7 @@ function handleButton (event) {
         .top-text {
           .role {
             hr {
-              width: 375px;
+              width: 325px;
             }
             span {
               font-size: 16px;
@@ -179,7 +172,7 @@ function handleButton (event) {
         }
       }
       .portrait-image {
-        left: -10%;
+        left: -15%;
         max-width: 380px;
       }
     }

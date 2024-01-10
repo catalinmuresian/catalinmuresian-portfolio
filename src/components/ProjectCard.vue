@@ -56,21 +56,31 @@ function handleButton (action) {
 
 <style lang="scss">
 .project-card {
-  max-width: 345px;
+  max-width: 300px;
   .q-card {
+    .hover {
+      display: none;
+    }
     img {
       width: 100%;
       border-radius: 5px;
     }
   }
   .info {
+    h3 {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
     .skills {
       display: flex;
       flex-direction: row;
       gap: 10px;
+      margin-bottom: 8px;
 
       p {
         color: $grey;
+        margin: 0;
+        font-size: 14px;
       }
     }
   }
@@ -78,13 +88,13 @@ function handleButton (action) {
     display: flex;
     gap: 30px;
   }
-
   @media only screen and (min-width: 768px) {
-    width: 47%;
+    width: 45%;
     max-width: 540px;
     .q-card {
       cursor: pointer;
       .hover {
+        display: block;
         position: absolute;
         z-index: 1;
         opacity: 0;
@@ -111,6 +121,16 @@ function handleButton (action) {
     }
     .buttons {
       display: none;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    width: 30%;
+    .info {
+      .skills {
+        p {
+          font-size: 16px;
+        }
+      }
     }
   }
 }

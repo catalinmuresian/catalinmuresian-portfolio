@@ -1,12 +1,15 @@
 <template>
   <div class="skills-section">
-    <SkillComp
-      v-for="{name, logo } in skillList"
-      :key="name"
-      :logo="logo"
-      :skill="name"
-    />
-
+    <h2>Some of the skills and tools I work with</h2>
+    <div class="skill-list">
+      <SkillComp
+        v-for="{name, logo, hoverColor} in skillList"
+        :key="name"
+        :logo="logo"
+        :skill="name"
+        :hover-color="hoverColor"
+      />
+    </div>
   </div>
 </template>
 
@@ -19,27 +22,33 @@ import {ref} from "vue";
 const skillList = ref([
   {
     name: 'HTML',
-    logo: 'html.png'
+    logo: 'html.png',
+    hoverColor: '#f16528'
   },
   {
     name: 'CSS',
-    logo: 'css.png'
+    logo: 'css.png',
+    hoverColor: '#369cd6'
   },
   {
     name: 'JavaScript',
-    logo: 'js.png'
+    logo: 'js.png',
+    hoverColor: '#e9ca32'
   },
   {
     name: 'Vue js',
-    logo: 'vue.png'
+    logo: 'vue.png',
+    hoverColor: '#41b783'
   },
   {
     name: 'Quasar js',
-    logo: 'quasar.png'
+    logo: 'quasar.png',
+    hoverColor: '#00b3fe'
   },
   {
     name: 'Nuxt js',
-    logo: 'nuxt.png'
+    logo: 'nuxt.png',
+    hoverColor: '#03c58e'
   },
 ])
 </script>
@@ -48,19 +57,28 @@ const skillList = ref([
 .skills-section {
   display: flex;
   width: 100%;
-  max-width: 620px;
-  margin: 0 auto;
-  gap: 40px;
+  gap: 60px;
   align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    max-width: 500px;
+  }
   @media only screen and (min-width: 768px) {
-    max-width: 700px;
-    gap: 100px;
+    gap: 80px;
+    .skill-list {
+      gap: 60px 120px;
+      max-width: 700px;
+    }
   }
   @media only screen and (min-width: 1440px) {
-    max-width: 800px;
+    .skill-list {
+      max-width: 1440px;
+      gap: 86px;
+    }
   }
 }
 

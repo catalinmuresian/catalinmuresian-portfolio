@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <div class="container main-padding nav-max-width">
+    <div class="container main-padding main-max-width">
       <h4 @click="navToMainPage()" class="logo">catalinmuresian</h4>
       <ul class="social-logos">
         <li>

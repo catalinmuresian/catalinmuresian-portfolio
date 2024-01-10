@@ -1,7 +1,7 @@
 <template>
   <div class="projects-section">
     <div class="top">
-      <h2>Projects</h2>
+      <h2>My recent work</h2>
       <div class="search">
         <q-input placeholder="Search"
                  label-color="white"
@@ -31,7 +31,6 @@
         :skills="skills"
         @handle-button="handleButton"
       />
-
     </div>
 
   </div>
@@ -47,31 +46,75 @@ const showNoResultMessage = ref(false)
 
 const projectsList = ref([
   {
-    projectNo: 2,
-    id: 'todo-app',
-    img: 'Bitmap.png',
-    title: 'TODO APP',
+    id: 'suport-solar',
+    img: 'suport-solar.png',
+    title: 'Suport Solar',
+    skills: ['HTML' , 'CSS', 'JavaScript', 'Quasar js']
+  },
+  {
+    id: 'black-mar',
+    img: 'black-mar.png',
+    title: 'Black Mar',
+    skills: ['HTML' , 'CSS', 'JavaScript', 'Vue js']
+  },
+  {
+    id: 'ibrowse',
+    img: 'ibrowse.png',
+    title: 'iBrowse',
+    skills: ['HTML' , 'CSS', 'JavaScript', 'Quasar js']
+  },
+  {
+    id: 'juicy-llama',
+    img: 'juicy.png',
+    title: 'Juicy Llama',
+    skills: ['HTML' , 'CSS', 'JavaScript', 'Vue js', 'Tailwind CSS']
+  },
+  {
+    id: 'la-viitor',
+    img: 'laviitor.png',
+    title: 'La Viitor Patrimonio',
+    skills: ['HTML' , 'CSS', 'JavaScript', 'Quasar js']
+  },
+  {
+    id: 'mim',
+    img: 'mim.png',
+    title: 'Muzeul Migratiei',
     skills: ['HTML' , 'CSS', 'JavaScript']
   },
   {
-    projectNo: 1,
-    id: 'entertainment-app',
-    img: 'Bitmap-1.png',
-    title: 'ENTERTAINMENT WEB APP',
+    id: 'notorius-nft',
+    img: 'notoriusNFT.png',
+    title: 'Notorius Kings NFT',
+    skills: ['HTML' , 'CSS', 'JavaScript', 'React js']
+  },
+  {
+    id: 'salva-monument',
+    img: 'salvamonument.png',
+    title: 'Salva Monument',
+    skills: ['HTML' , 'CSS', 'JavaScript', 'Quasar js']
+  },
+  {
+    id: 'dinstitute',
+    img: 'dinstitute.png',
+    title: 'Dinstitute',
+    skills: ['HTML' , 'CSS', 'JavaScript', 'Vue js']
+  },
+  {
+    id: 'add-to-cart',
+    img: 'add-to-cart.png',
+    title: 'Add to cart - component',
     skills: ['HTML' , 'CSS', 'JavaScript']
   },
   {
-    projectNo: 3,
-    id: 'memory-app',
-    img: 'Bitmap-2.png',
-    title: 'MEMORY GAME',
-    skills: ['HTML' , 'CSS', 'JavaScript']
+    id: 'countdown',
+    img: 'countdown.png',
+    title: 'Countdown timer',
+    skills: ['HTML' , 'CSS', 'JavaScript', 'Vue js']
   },
   {
-    projectNo: 4,
-    id: 'art-gallery-app',
-    img: 'Bitmap-3.png',
-    title: 'ART Gallery',
+    id: 'results',
+    img: 'results.png',
+    title: 'Results summary - App',
     skills: ['HTML' , 'CSS', 'JavaScript']
   },
 ])
@@ -108,16 +151,15 @@ watch(() => projectsList.value, (value) => {
 
 <style lang="scss">
 .projects-section {
-  margin-bottom: 60px;
-
   .top {
     margin-bottom: 40px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     width: 100%;
-    align-items: center;
-
+    gap: 15px;
+    h2 {
+      text-align: center;
+    }
     .search {
       .q-field--standard .q-field__control:before {
         border-color: $dark-grey !important;
@@ -147,20 +189,20 @@ watch(() => projectsList.value, (value) => {
     align-items: center;
     h3 {
       display: flex;
+      justify-content: left;
       width: 100%;
     }
   }
 
   @media only screen and (min-width: 768px) {
-    margin-bottom: 80px;
     .projects-list {
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 80px 40px;
       justify-content: space-between;
     }
     .top {
       margin-bottom: 60px;
+      gap: 30px;
     }
   }
 }

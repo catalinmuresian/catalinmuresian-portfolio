@@ -1,5 +1,5 @@
 <template>
-  <div class="skill-comp">
+  <div class="skill-comp" :style="styleObject(hoverColor)">
     <img style="width: 80px;"
          :src="`${logo}`"
          alt="logo">
@@ -11,8 +11,15 @@
 
 const props = defineProps({
   skill: String,
-  logo: String
+  logo: String,
+  hoverColor: String
 })
+
+function styleObject (color) {
+  return {
+    '--color-hover': color,
+  }
+}
 </script>
 
 <style lang="scss">
@@ -22,6 +29,7 @@ const props = defineProps({
   flex-direction: column;
   width: 135px;
   gap: 10px;
+  cursor: default;
   .skill-name {
     color: #adadad;
     text-align: center;
@@ -31,17 +39,11 @@ const props = defineProps({
     letter-spacing: -1px;
   }
 }
-@media only screen and (min-width: 768px) {
-  .skill-comp {
-    cursor: pointer;
+.skill-comp:hover {
+  animation: tilt-shaking 0.25s infinite;
+  .skill-name {
+    color: var(--color-hover);
   }
-  .skill-comp:hover {
-    animation: tilt-shaking 0.25s infinite;
-    .skill-name {
-      color: $yellow;
-    }
-  }
-
 }
 @keyframes tilt-shaking {
   0% { transform: rotate(0deg); }

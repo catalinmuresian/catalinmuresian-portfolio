@@ -20,8 +20,6 @@
           :type="'submit'"/>
       </q-form>
     </div>
-
-    <hr>
   </div>
 </template>
 
@@ -67,6 +65,7 @@ function submit () {
 <style lang="scss">
 .contact-section {
   padding-top: 60px;
+  padding-bottom: 60px;
   background-color: #707070;
   .container {
     max-width: 450px;
@@ -95,6 +94,7 @@ function submit () {
   }
   @media only screen and (min-width: 768px) {
     padding-top: 80px;
+    padding-bottom: 80px;
     .container {
     .info {
       p {
@@ -123,7 +123,7 @@ function submit () {
   }
   @media only screen and (min-width: 1440px) {
     .container {
-      max-width: 1440px;
+      max-width: 1300px;
     }
   }
 }
