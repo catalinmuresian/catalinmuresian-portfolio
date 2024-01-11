@@ -1,7 +1,7 @@
 <template>
   <q-input
     class="base-input"
-    v-model="value"
+    v-model="inputValue"
     lazy-rules="ondemand"
     :type="type"
     label-color="grey"
@@ -14,20 +14,25 @@
 
 <script setup>
 
-import {ref} from "vue";
+import {ref, watch} from "vue";
 
 const emit = defineEmits(['handle-input'])
 
 const props = defineProps({
   label: String,
-  type: String
+  type: String,
+  value: String
 })
 
-const value = ref('')
+const inputValue = ref('')
 
 function handleInput (value) {
   emit('handle-input', {key: props.label, value})
 }
+
+watch(() => props.value, (value) => {
+  inputValue.value = value
+}, { immediate: true })
 
 
 

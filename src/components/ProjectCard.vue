@@ -3,23 +3,26 @@
        @click="openModal">
     <q-card>
       <img :src="`${img}`" :alt="img">
+      <q-icon class="icon-open-full"
+              color="grey-6"
+              size="30px"
+              name="fullscreen"/>
     </q-card>
     <div class="info">
-      <div style="display: flex;justify-content: space-between;align-items: flex-end;">
+      <div style="display: flex;margin-top: 5px;justify-content: space-between;align-items: baseline;">
         <h3>{{ title }}</h3>
-        <div v-if="link" class="see-live" style="display: flex;align-items: center; gap: 5px">
+        <div v-if="link" class="see-live">
         <a
           style="
-                gap: 5px;
+                gap: 10px;
                 display: flex;
                 cursor: pointer;
                 font-weight: 700;
-                margin-right: 5px;
-                color: #E8DF00;
+                color: #41B783FF;
                 text-decoration: none;
                 align-items: center;"
           :href="link" target="_blank">
-          <q-spinner-puff size="2em" color="#E8DF00" /> See live</a>
+          See live <q-spinner-radio size="1em" color="#41B783FF" /></a>
       </div>
       </div>
       <div class="skills">
@@ -31,8 +34,6 @@
 </template>
 
 <script setup>
-
-import MainButton from './MainButton'
 
 const emit = defineEmits(['open-modal'])
 
@@ -64,14 +65,25 @@ function openModal () {
       width: 100%;
       border-radius: 5px;
     }
+    .icon-open-full {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      display: none;
+    }
   }
   .info {
     h3 {
-      margin-top: 10px;
+      margin-top: 5px;
       margin-bottom: 5px;
     }
     .see-live {
       display: flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid #41B783FF;
+      padding: 2px 12px;
+      border-radius: 5px;
     }
     .skills {
       display: flex;
@@ -91,10 +103,8 @@ function openModal () {
     max-width: 540px;
     .q-card {
       cursor: pointer;
-    }
-    .info {
-      .see-live {
-        display: none !important;
+      .icon-open-full {
+        display: block;
       }
     }
   }

@@ -3,23 +3,7 @@
     <q-dialog v-model="fixed">
       <q-card class="project-dialog">
         <q-card-section class="row items-center q-pb-none title-section-card">
-          <div class="title">
-            <div class="text-h6">{{ selectedProject.title }}</div>
-            <div v-if="selectedProject.link"
-                 style="display: flex;align-items: center; gap: 5px">
-              <a
-                style="
-                gap: 5px;
-                display: flex;
-                cursor: pointer;
-                font-weight: 700;
-                color: rgb(0 127 255);
-                text-decoration: none;
-                align-items: center;"
-                :href="selectedProject.link" target="_blank">
-                <q-spinner-puff size="2em" color="rgb(0 127 255)" /> See live</a>
-            </div>
-          </div>
+          <div class="title text-h6">{{ selectedProject.title }}</div>
           <q-space />
           <div style="display: flex;align-items: center; gap: 10px">
           <q-btn icon="close" flat round dense v-close-popup />
@@ -98,17 +82,17 @@ const projectsList = ref([
     link: 'https://suport-solar.ro/'
   },
   {
-    id: 'juicy-llama',
-    img: 'juicy.png',
-    title: 'Juicy Llama',
-    skills: ['HTML' , 'CSS', 'JavaScript', 'Vue js', 'Tailwind CSS']
-  },
-  {
     id: 'black-mar',
     img: 'black-mar.png',
     title: 'Black Mar',
     skills: ['HTML' , 'CSS', 'JavaScript', 'Vue js'],
     link: 'https://blackmar.io/'
+  },
+  {
+    id: 'juicy-llama',
+    img: 'juicy.png',
+    title: 'Juicy Llama',
+    skills: ['HTML' , 'CSS', 'JavaScript', 'Vue js', 'Tailwind CSS']
   },
   {
     id: 'ibrowse',
@@ -218,17 +202,15 @@ watch(() => projectsList.value, (value) => {
       .title {
         display: flex;
         flex-direction: row;
-        align-items: flex-end;
+        align-items: center;
         flex-wrap: wrap;
         width: 80%;
-        .text-h6 {
-        }
       }
     }
     .skills {
       display: flex;
       flex-direction: row;
-      gap: 5px;
+      gap: 10px;
       p {
         font-size: 12px;
         color: grey;margin: 0;
@@ -266,9 +248,7 @@ watch(() => projectsList.value, (value) => {
       .q-field--standard .q-field__control:before {
         border-color: $dark-grey !important;
       }
-
       color: white;
-
       .q-input {
         max-width: 160px;
 
@@ -276,14 +256,12 @@ watch(() => projectsList.value, (value) => {
           font-weight: 700;
           color: $white;
         }
-
         .q-icon {
           color: white;
         }
       }
     }
   }
-
   .projects-list {
     display: flex;
     flex-direction: column;
@@ -294,7 +272,6 @@ watch(() => projectsList.value, (value) => {
       justify-content: left;
     }
   }
-
   @media only screen and (min-width: 768px) {
     .projects-list {
       flex-direction: row;

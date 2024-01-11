@@ -6,7 +6,7 @@
         <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
 
       </div>
-      <q-form @submit.prevent.stop="submit">
+      <q-form @submit.prevent="submit">
         <BaseInput
           v-for="{key, type} in formFields"
           :value="form[key]"
@@ -28,16 +28,26 @@
 
 import BaseInput from './BaseInput'
 import MainButton from './MainButton'
-import {computed, ref} from "vue";
+import {computed, ref, watch} from "vue";
 import {useStore} from "vuex";
+import {useQuasar} from "quasar";
 
-const { state, dispatch} = useStore
-()
+const { state, dispatch } = useStore()
+const $q = useQuasar()
+
 const isFetching = computed(() => {
   return state.data.isFetching
 })
 
-const form = ref({
+const reqStatus = computed(() => {
+  return state.data.reqStatus
+})
+
+const reqMessage = computed(() => {
+  return state.data.reqMessage
+})
+
+let form = ref({
   name: '',
   email: '',
   message: ''
@@ -71,6 +81,33 @@ function submit () {
     message: form.value.message
   })
 }
+
+watch(() => reqStatus.value, (value) => {
+  const error = {
+    position: 'top',
+    icon: 'error',
+    color: 'negative',
+    message: reqMessage.value
+  }
+  const success = {
+    position: 'top',
+    icon: 'success',
+    color: 'positive',
+    message: reqMessage.value
+  }
+
+  if (value === 'success') {
+    $q.notify(success)
+    form.value = {
+      name: '',
+      email: '',
+      message: ''
+    }
+  }
+
+  value === 'error' && $q.notify(error)
+
+}, { immediate: true })
 
 </script>
 

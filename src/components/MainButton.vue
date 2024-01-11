@@ -4,7 +4,8 @@
          :loading="loading"
          :type="type"
          color="white"
-         @click="handleButton('contact-me')">{{ name }}</q-btn>
+         @click="handleButton('contact-me')">{{ name }}
+  </q-btn>
 </template>
 
 <script setup>
@@ -12,7 +13,7 @@
 const props = defineProps({
   name: String,
   type: String,
-  loading: Boolean
+  loading: Boolean,
 })
 
 const emit = defineEmits(['handle-button'])
