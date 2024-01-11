@@ -34,8 +34,15 @@ h1, h2, h3, h4 {
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: Space Grotesk, sans serif;
   font-style: normal;
-  font-weight: 700;
   line-height: 100%;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2, h3, h4 {
+  font-weight: 600;
 }
 
 .main-padding {
@@ -55,20 +62,22 @@ hr {
 
   h1 {
     font-size: 36px;
+
   }
 
   h2 {
     font-size: 26px;
-    font-weight: 700;
+
   }
 
   h3 {
     font-size: 20px;
-    font-weight: 700;
+
   }
 
   h4 {
     font-size: 20px;
+
   }
 
   p {
@@ -86,7 +95,7 @@ hr {
   body {
     animation: moving 100s ease infinite;
   }
-  .main-max-width {
+  .main-max-width, .contact-main-max-width  {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
@@ -122,9 +131,10 @@ hr {
   p {
     font-size: 18px;
   }
-  .main-max-width {
-    max-width: 1300px;
+  .main-max-width  {
+    max-width: 1440px;
   }
+
 
 }
 

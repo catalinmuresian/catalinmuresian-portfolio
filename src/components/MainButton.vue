@@ -1,6 +1,7 @@
 <template>
   <q-btn class="main-button"
          flat
+         :loading="loading"
          :type="type"
          color="white"
          @click="handleButton('contact-me')">{{ name }}</q-btn>
@@ -10,7 +11,8 @@
 
 const props = defineProps({
   name: String,
-  type: String
+  type: String,
+  loading: Boolean
 })
 
 const emit = defineEmits(['handle-button'])

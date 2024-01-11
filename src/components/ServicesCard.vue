@@ -26,13 +26,14 @@ function styleObject (color) {
   width: 100%;
   max-width: 300px;
   background-color: #f7f7f7;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 50px 20px;
   gap: 40px;
   cursor: default;
+  border: 3px solid var(--color-hover);
   h4, p {
     color: $black;
     text-align: center;

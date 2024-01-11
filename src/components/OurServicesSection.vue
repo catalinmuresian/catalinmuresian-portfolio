@@ -1,6 +1,6 @@
 <template>
   <div class="our-services-section">
-    <h2>Our services</h2>
+    <h2>Services</h2>
     <div class="our-services-list">
       <ServicesCard
         v-for="({ title, description, hoverColor}, index) in servicesList"

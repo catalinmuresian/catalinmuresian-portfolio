@@ -1,37 +1,31 @@
 <template>
-  <div class="project-card">
+  <div class="project-card"
+       @click="openModal">
     <q-card>
       <img :src="`${img}`" :alt="img">
-      <div class="hover">
-        <div class="buttons">
-          <MainButton
-            :name="'View Project'"
-            @handle-button="handleButton('view-project')"
-          />
-          <MainButton
-            :name="'View Code'"
-            @handle-button="handleButton('view-code')"
-          />
-        </div>
-
-      </div>
     </q-card>
     <div class="info">
-      <h3>{{ title }}</h3>
+      <div style="display: flex;justify-content: space-between;align-items: flex-end;">
+        <h3>{{ title }}</h3>
+        <div v-if="link" class="see-live" style="display: flex;align-items: center; gap: 5px">
+        <a
+          style="
+                gap: 5px;
+                display: flex;
+                cursor: pointer;
+                font-weight: 700;
+                margin-right: 5px;
+                color: #E8DF00;
+                text-decoration: none;
+                align-items: center;"
+          :href="link" target="_blank">
+          <q-spinner-puff size="2em" color="#E8DF00" /> See live</a>
+      </div>
+      </div>
       <div class="skills">
         <p v-for="skill in skills"
           :key="skill">{{ skill }}</p>
       </div>
-    </div>
-    <div class="buttons">
-     <MainButton
-       :name="'View Project'"
-       @handle-button="handleButton('view-project')"
-     />
-      <MainButton
-        :name="'View Code'"
-        @handle-button="handleButton('view-code')"
-      />
     </div>
   </div>
 </template>
@@ -40,27 +34,32 @@
 
 import MainButton from './MainButton'
 
-const emit = defineEmits(['handle-button'])
+const emit = defineEmits(['open-modal'])
 
 const props = defineProps({
   img: String,
   title: String,
   skills: Array,
-  id: String
+  id: String,
+  link: String
 })
 
-function handleButton (action) {
-  emit('handle-button', {action, id: props.id})
+function openModal () {
+  emit('open-modal', {
+    id: props.id,
+    img: props.img,
+    skills: props.skills,
+    title: props.title,
+    link: props.link
+  })
 }
 </script>
 
 <style lang="scss">
 .project-card {
-  max-width: 300px;
+  max-width: 500px;
   .q-card {
-    .hover {
-      display: none;
-    }
+    border-radius: 5px;
     img {
       width: 100%;
       border-radius: 5px;
@@ -70,6 +69,9 @@ function handleButton (action) {
     h3 {
       margin-top: 10px;
       margin-bottom: 5px;
+    }
+    .see-live {
+      display: flex;
     }
     .skills {
       display: flex;
@@ -84,43 +86,16 @@ function handleButton (action) {
       }
     }
   }
-  .buttons {
-    display: flex;
-    gap: 30px;
-  }
   @media only screen and (min-width: 768px) {
     width: 45%;
     max-width: 540px;
     .q-card {
       cursor: pointer;
-      .hover {
-        display: block;
-        position: absolute;
-        z-index: 1;
-        opacity: 0;
-        background-color: rgba(52, 52, 52, 0.62);
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        transition: all 200ms ease;
-        .buttons {
-          position: absolute;
-          width: 100%;
-          bottom: 25%;
-          display: flex;
-          justify-content: center;
-        }
-      }
     }
-    .q-card:hover {
-      .hover {
-        opacity: 1;
-        transition: opacity 200ms ease;
+    .info {
+      .see-live {
+        display: none !important;
       }
-    }
-    .buttons {
-      display: none;
     }
   }
   @media only screen and (min-width: 1440px) {

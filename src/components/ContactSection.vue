@@ -16,6 +16,7 @@
           @handle-input="handleInput"
         />
         <MainButton
+          :loading="isFetching"
           :name="'Send Message'"
           :type="'submit'"/>
       </q-form>
@@ -27,7 +28,14 @@
 
 import BaseInput from './BaseInput'
 import MainButton from './MainButton'
-import {ref} from "vue";
+import {computed, ref} from "vue";
+import {useStore} from "vuex";
+
+const { state, dispatch} = useStore
+()
+const isFetching = computed(() => {
+  return state.data.isFetching
+})
 
 const form = ref({
   name: '',
@@ -57,7 +65,11 @@ function handleInput ({key, value}) {
 }
 
 function submit () {
-  console.log(form.value)
+  dispatch('send_mmessage', {
+    name: form.value.name ,
+    email: form.value.email,
+    message: form.value.message
+  })
 }
 
 </script>
@@ -123,7 +135,7 @@ function submit () {
   }
   @media only screen and (min-width: 1440px) {
     .container {
-      max-width: 1300px;
+      max-width: 1440px;
     }
   }
 }

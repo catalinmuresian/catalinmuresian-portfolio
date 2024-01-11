@@ -40,7 +40,7 @@ function styleObject (color) {
   }
 }
 .skill-comp:hover {
-  animation: tilt-shaking 0.25s infinite;
+  animation: tilt-shaking 0.40s infinite;
   .skill-name {
     color: var(--color-hover);
   }

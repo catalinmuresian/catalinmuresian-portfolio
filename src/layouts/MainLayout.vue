@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" ref="el">
     <Nav />
     <q-page-container>
       <router-view />
@@ -14,6 +14,19 @@
 <script setup>
 
 import Nav from "components/Nav";
+
+import {ref, watch} from "vue";
+import { useElementSize } from '@vueuse/core'
+import {useStore} from "vuex";
+const el = ref(null)
+const { width } = useElementSize(el)
+
+const { commit } = useStore()
+
+watch(() => width.value, (value) => {
+  commit('SET_SCREEN_WIDTH', value)
+}, { deep: true })
+
 </script>
 
 <style lang="scss">
