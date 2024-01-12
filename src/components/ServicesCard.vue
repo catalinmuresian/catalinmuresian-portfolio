@@ -1,8 +1,8 @@
 <template>
-  <div class="services-card" :style="styleObject(hoverColor)">
+  <section class="services-card animation-section" :style="styleObject(hoverColor)">
     <h4>{{ title }}</h4>
     <p>{{ description }}</p>
-  </div>
+  </section>
 </template>
 
 <script setup>

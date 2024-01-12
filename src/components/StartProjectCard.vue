@@ -17,7 +17,7 @@ import MainButton from './MainButton'
 
 function handleButton () {
   const element = document.getElementById('contact-section');
-  element.scrollIntoView({ behavior: 'smooth' });
+  element.scrollIntoView({ behavior: 'instant' });
 }
 </script>
 

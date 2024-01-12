@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex main-page column main-distance">
-    <HeroSection  class="main-padding main-max-width animation-section"/>
+    <HeroSection  class="main-padding main-max-width"/>
     <hr>
     <OurServicesSection  class="main-padding main-max-width our-services-section animation-section " />
     <SkillsSection  class="main-padding main-max-width animation-section" />
@@ -17,123 +17,97 @@ import ProjectsSection from "components/ProjectsSection";
 import ContactSection from "components/ContactSection";
 import StartProjectCard from "components/StartProjectCard";
 import OurServicesSection from "components/OurServicesSection";
-
-const section = ref(null)
-
 import { gsap } from "gsap";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {onMounted, ref} from "vue";
+import {onMounted} from "vue";
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
 
-
-  console.log(section)
   const sections = document.querySelectorAll('section')
-  console.log(sections)
-  //
-  // sections.forEach(sec => {
-  //   console.log(sec)
-  // })
+  const mainSections = [
+    'nav',
+    'our-services-section',
+    'skills-section',
+    'start-project-card',
+    'projects-section',
+    'contact-section-anim'
+  ]
+  const heroSectionsAnim = [
+    {
+      sectionName: 'hi',
+    },
+    {
+      sectionName: 'name',
+      delay: 0.6
+    },
+    {
+      sectionName: 'role',
+      delay: 0.8
+    },
+    {
+      sectionName: 'desc',
+      delay: 1
+    },
+    {
+      sectionName: 'button-hero',
+      delay: 1.2
+    },
+    {
+      sectionName: 'image-hero',
+      delay: 1.6
 
-  // let tween = gsap.to(".main-padding", { x: 100 }),
-  //   st = ScrollTrigger.create({
-  //     y: -100,
-  //     opacity: 1,
-  //     duration: 1,
-  //     backgroundColor: 'black',
-  //     animation: tween,
-  //   });
-  //
-  // console.log(st.animation); // tween
+    },
+    ]
 
   sections.forEach(sec => {
-    console.log(sec)
     gsap.to(sec, {
       scrollTrigger: {
         trigger: sec,
         toggleActions: 'play none none none',
-        end: 'top'
+        start: '-250px 100%',
+        end: 'bottom 100%'
       },
       y: 0,
       opacity: 1,
       duration: 1,
-
     })
-  })
 
-  gsap.to('.nav', {
-    scrollTrigger: {
-      trigger: '.nav',
-      toggleActions: 'play none none none'
-    },
-    y: 0,
-    opacity: 1,
-    duration: 1,
   })
-  gsap.to('.hero-section', {
-    scrollTrigger: {
-      trigger: '.hero-section',
-      toggleActions: 'play none none none'
-    },
-    y: 0,
-    opacity: 1,
-    duration: 1,
-  })
-  gsap.to('.our-services-section', {
-    scrollTrigger: {
-      trigger: '.our-services-section',
-      toggleActions: 'play none none none'
-    },
-    y: 0,
-    opacity: 1,
-    duration: 1,
-  })
-  gsap.to('.skills-section', {
-    scrollTrigger: {
-      trigger: '.skills-section',
-      toggleActions: 'play none none none'
-    },
-    y: 0,
-    opacity: 1,
-    duration: 1,
-  })
-  gsap.to('.start-project-card', {
-    scrollTrigger: {
-      trigger: '.start-project-card',
-      toggleActions: 'play none none none'
-    },
-    y: 0,
-    opacity: 1,
-    duration: 1,
-  })
-  gsap.to('.projects-section', {
-    scrollTrigger: {
-      trigger: '.projects-section',
-      toggleActions: 'play none none none'
-    },
-    y: 0,
-    opacity: 1,
-    duration: 1,
-  })
-  gsap.to('.contact-section-anim', {
-    scrollTrigger: {
-      trigger: '.contact-section-anim',
-      toggleActions: 'play none none none'
-    },
-    y: 0,
-    opacity: 1,
-    duration: 1,
-  })
+  mainSections.forEach(sec => {
+    gsap.to(`.${sec}`, {
+      scrollTrigger: {
+        trigger: `.${sec}`,
+        toggleActions: 'play none none none'
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+    })
 
+
+  })
+  heroSectionsAnim.forEach(({sectionName, delay}) => {
+    gsap.to(`.${sectionName}`, {
+      scrollTrigger: {
+        trigger: `.${sectionName}`,
+        toggleActions: 'play none none none'
+      },
+      x: 0,
+      y: 0,
+      opacity: 1,
+      duration: 1.1,
+      delay: delay
+    })
+
+  })
 })
 
 </script>
 
 <style lang="scss">
 .animation-section {
-  transform: translate(0px, 100px);
+  transform: translate(0px, 50px);
   opacity: 0;
 }
 .main-page .z {

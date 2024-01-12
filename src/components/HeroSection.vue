@@ -3,26 +3,26 @@
     <div class="top">
       <div class="text">
         <div class="top-text">
-          <h1>Hi</h1>
-          <h1>I’m Catalin M.</h1>
+          <h1 class="hi">Hi</h1>
+          <h1 class="name">I’m Catalin M.</h1>
           <div class="role">
             <hr>
             <span>frontend developer</span>
           </div>
-          <p>Crafting pixel-perfect, user-centric web experiences with passion and proficiency.</p>
+          <p class="desc">Crafting pixel-perfect, user-centric web experiences with passion and proficiency.</p>
         </div>
         <MainButton
-          class="button-tablet"
+          class="button-tablet button-hero"
           :name="'Contact Me'"
           @handle-button="handleButton"
         />
       </div>
-      <div class="portrait-image">
+      <div class="portrait-image image-hero">
         <img src="../assets/cm-main-image.png" alt="">
       </div>
     </div>
     <MainButton
-      class="button-mobile"
+      class="button-mobile button-hero"
       :name="'Contact Me'"
       @handle-button="handleButton"
     />
@@ -36,13 +36,24 @@ import MainButton from '../components/MainButton'
 
 function handleButton () {
     const element = document.getElementById('contact-section');
-    element.scrollIntoView({ behavior: 'smooth' });
+    element.scrollIntoView({ behavior: 'instant' });
 }
 </script>
 
 <style lang="scss">
 .hero-section {
   margin-top: 20px;
+  .hi, .name, .role, .desc {
+    transform: translateX(-450px);
+    opacity: 0;
+  }
+  .button-hero {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  .image-hero {
+    opacity: 0;
+  }
   .button-mobile {
     display: block;
   }
@@ -109,6 +120,9 @@ function handleButton () {
   }
   @media only screen and (min-width: 768px) {
     margin-top: 60px;
+    .hi, .name, .role, .button-hero, .desc {
+      transform: translateX(-700px);
+    }
     .main-button {
       margin: unset;
     }
@@ -154,6 +168,9 @@ function handleButton () {
     }
   }
   @media only screen and (min-width: 1440px) {
+    .hi, .name, .role, .button-hero, .desc {
+      transform: translateX(-900px);
+    }
     .top {
       .text {
         .top-text {

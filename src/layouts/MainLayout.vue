@@ -15,7 +15,7 @@
 
 
 import Nav from "components/Nav";
-import {onMounted, ref, watch} from "vue";
+import {ref, watch} from "vue";
 import { useElementSize } from '@vueuse/core'
 import {useStore} from "vuex";
 const el = ref(null)
