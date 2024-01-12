@@ -53,7 +53,7 @@ module.exports = configure(function (ctx) {
 
       // transpile: false,
       publicPath: process.env.NODE_ENV === 'production'
-        ? '/catalinmuresian.github.io/'
+        ? '/'
         : '/',
 
       // Add dependencies for transpiling with Babel (Array of string/regex)
