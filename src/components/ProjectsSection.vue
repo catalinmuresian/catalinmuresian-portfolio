@@ -14,9 +14,12 @@
         </q-card-section>
         <q-separator />
         <q-card-section style="height: 100%;" class="scroll">
-          <img style="width: 100%;"
+          <q-img
+            style="width: 100%;"
+            loading="lazy"
             :src="`${selectedProject.img}`"
-               :alt="`${selectedProject.img}`">
+            :alt="`${selectedProject.img}`"
+          />
         </q-card-section>
       </q-card>
     </q-dialog>

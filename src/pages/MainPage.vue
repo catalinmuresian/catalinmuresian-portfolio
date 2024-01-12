@@ -75,12 +75,14 @@ onMounted(() => {
 
   })
   sections.forEach(sec => {
+    const start = sec.className === 'services-card animation-section' ? '-100px 100%' : '-250px 100%';
+    console.log(start)
     gsap.to(sec, {
       scrollTrigger: {
         trigger: sec,
         toggleActions: 'play none none none',
-        start: '-250px 100%',
-        end: 'bottom 100%'
+        start: start,
+        end: 'bottom 100%',
       },
       y: 0,
       opacity: 1,
@@ -114,35 +116,4 @@ onMounted(() => {
   transform: translate(0px, 50px);
   opacity: 0.5;
 }
-.main-page .z {
-  margin-top: 200px;
-  height: 2000px;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  .box {
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 100px;
-    display: block;
-    width: 500px;
-    height: 260px;
-    text-align: left;
-    color: white;
-    padding: 20px;
-    opacity: 0;
-  }
-  .a {
-    background-color: green;
-  }
-  .b {
-    background-color: orange;
-
-  }
-  .c {
-    background-color: grey;
-  }
-
-}
-
 </style>

@@ -1,8 +1,10 @@
 <template>
   <div class="skill-comp" :style="styleObject(hoverColor)">
-    <img style="width: 80px;"
-         :src="`${logo}`"
-         alt="logo">
+    <q-img
+      style="width: 80px;"
+      loading="lazy"
+      :src="`${logo}`"
+      alt="logo" />
     <span class="skill-name">{{ skill }}</span>
   </div>
 </template>

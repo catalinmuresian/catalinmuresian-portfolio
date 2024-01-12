@@ -4,7 +4,9 @@
        class="project-card"
        @click="openModal">
     <q-card>
-      <img :src="`${img}`" :alt="img">
+      <q-img :src="`${img}`"
+             loading="lazy"
+             :alt="img" />
       <q-icon class="icon-open-full"
               color="grey-6"
               size="30px"
@@ -62,9 +64,11 @@ function openModal () {
 <style lang="scss">
 .project-card {
   max-width: 500px;
+  width: 100%;
   .q-card {
     border-radius: 5px;
-    img {
+    width: 100%;
+    .q-img {
       width: 100%;
       border-radius: 5px;
     }

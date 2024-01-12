@@ -18,7 +18,10 @@
         />
       </div>
       <div class="portrait-image image-hero">
-        <img src="../assets/cm-main-image.png" alt="">
+        <q-img
+          loading="lazy"
+          src="../assets/cm-main-image.png"
+          alt="cm-main-image" />
       </div>
     </div>
     <MainButton
@@ -96,11 +99,12 @@ function handleButton () {
     }
     .portrait-image {
       max-width: 190px;
+      width: 100%;
       position: absolute;
-      bottom: -16px;
+      bottom: -5px;
       right: -16px;
 
-      img {
+      .q-img {
         width: 100%;
       }
     }
