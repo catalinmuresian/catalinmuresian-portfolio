@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card"
+  <section class="project-card animation-section"
        @click="openModal">
     <q-card>
       <img :src="`${img}`" :alt="img">
@@ -30,7 +30,7 @@
           :key="skill">{{ skill }}</p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

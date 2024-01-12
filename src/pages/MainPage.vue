@@ -31,6 +31,7 @@ onMounted(() => {
 
   console.log(section)
   const sections = document.querySelectorAll('section')
+  console.log(sections)
   //
   // sections.forEach(sec => {
   //   console.log(sec)
@@ -47,19 +48,20 @@ onMounted(() => {
   //
   // console.log(st.animation); // tween
 
-  // sections.forEach(sec => {
-  //   console.log(sec)
-  //   gsap.to(sec, {
-  //     scrollTrigger: {
-  //       trigger: sec,
-  //       toggleActions: 'restart none restart none'
-  //     },
-  //     y: -100,
-  //     opacity: 1,
-  //     duration: 1,
-  //     backgroundColor: 'black',
-  //   })
-  // })
+  sections.forEach(sec => {
+    console.log(sec)
+    gsap.to(sec, {
+      scrollTrigger: {
+        trigger: sec,
+        toggleActions: 'play none none none',
+        end: 'top'
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+
+    })
+  })
 
   gsap.to('.nav', {
     scrollTrigger: {
