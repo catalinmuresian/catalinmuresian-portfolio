@@ -44,6 +44,7 @@
       <ProjectCard
         v-for="{img, title, skills, id, link} in projectsList"
         :key="title"
+        :class="id"
         :id="id"
         :img="img"
         :title="title"

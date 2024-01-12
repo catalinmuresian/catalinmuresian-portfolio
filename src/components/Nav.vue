@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="nav" style="opacity: 0;transition: all 300ms ease">
     <div class="container main-padding main-max-width">
       <h4 @click="navToMainPage()" class="logo">catalinmuresian</h4>
       <ul class="social-logos">
