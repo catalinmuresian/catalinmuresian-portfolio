@@ -1,11 +1,14 @@
 <template>
   <SnowFlake />
-  <router-view />
+    <router-view/>
 </template>
 
 <script setup>
 import SnowFlake from './components/SnowFlake'
+
+
 </script>
 
 <style lang="scss">
+
 </style>
