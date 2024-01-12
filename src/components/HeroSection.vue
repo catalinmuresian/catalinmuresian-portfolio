@@ -44,11 +44,11 @@ function handleButton () {
 .hero-section {
   margin-top: 20px;
   .hi, .name, .role, .desc {
-    transform: translateX(-450px);
+    transform: translateY(-30px);
     opacity: 0;
   }
   .button-hero {
-    transform: translateY(50px);
+    transform: translateY(30px);
     opacity: 0;
   }
   .image-hero {
@@ -121,7 +121,7 @@ function handleButton () {
   @media only screen and (min-width: 768px) {
     margin-top: 60px;
     .hi, .name, .role, .button-hero, .desc {
-      transform: translateX(-700px);
+      transform: translateY(-50px);
     }
     .main-button {
       margin: unset;
@@ -168,9 +168,6 @@ function handleButton () {
     }
   }
   @media only screen and (min-width: 1440px) {
-    .hi, .name, .role, .button-hero, .desc {
-      transform: translateX(-900px);
-    }
     .top {
       .text {
         .top-text {

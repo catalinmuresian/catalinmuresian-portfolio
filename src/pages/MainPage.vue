@@ -55,11 +55,25 @@ onMounted(() => {
     },
     {
       sectionName: 'image-hero',
-      delay: 1.6
+      delay: 1.2
 
     },
     ]
 
+  heroSectionsAnim.forEach(({sectionName, delay}) => {
+    gsap.to(`.${sectionName}`, {
+      scrollTrigger: {
+        trigger: `.${sectionName}`,
+        toggleActions: 'play none none none'
+      },
+      x: 0,
+      y: 0,
+      opacity: 1,
+      duration: 1.1,
+      delay: delay
+    })
+
+  })
   sections.forEach(sec => {
     gsap.to(sec, {
       scrollTrigger: {
@@ -87,20 +101,6 @@ onMounted(() => {
 
 
   })
-  heroSectionsAnim.forEach(({sectionName, delay}) => {
-    gsap.to(`.${sectionName}`, {
-      scrollTrigger: {
-        trigger: `.${sectionName}`,
-        toggleActions: 'play none none none'
-      },
-      x: 0,
-      y: 0,
-      opacity: 1,
-      duration: 1.1,
-      delay: delay
-    })
-
-  })
 })
 
 </script>
@@ -108,7 +108,7 @@ onMounted(() => {
 <style lang="scss">
 .animation-section {
   transform: translate(0px, 50px);
-  opacity: 0;
+  opacity: 0.5;
 }
 .main-page .z {
   margin-top: 200px;
