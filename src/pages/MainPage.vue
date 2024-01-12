@@ -75,7 +75,7 @@ onMounted(() => {
 
   })
   sections.forEach(sec => {
-    const start = sec.className === 'services-card animation-section' ? '-100px 100%' : '-250px 100%';
+    const start = sec.className === 'services-card animation-section' ? '-100px 100%' : '-150px 100%';
     console.log(start)
     gsap.to(sec, {
       scrollTrigger: {
