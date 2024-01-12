@@ -1,5 +1,7 @@
 <template>
-  <section class="project-card animation-section"
+  <section
+       :class="!isSearch ? 'animation-section' : 'remove-animation' "
+       class="project-card"
        @click="openModal">
     <q-card>
       <img :src="`${img}`" :alt="img">
@@ -42,7 +44,8 @@ const props = defineProps({
   title: String,
   skills: Array,
   id: String,
-  link: String
+  link: String,
+  isSearch: Boolean
 })
 
 function openModal () {

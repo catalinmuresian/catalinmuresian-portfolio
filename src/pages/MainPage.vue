@@ -106,6 +106,10 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
+.remove-animation {
+  transform: translate(0px, 0px) !important;
+  opacity: 1 !important;
+}
 .animation-section {
   transform: translate(0px, 50px);
   opacity: 0.5;

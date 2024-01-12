@@ -48,6 +48,7 @@
         :img="img"
         :title="title"
         :skills="skills"
+        :is-search="isSearch"
         :link="link"
         @open-modal="handleOpenModal"
       />
@@ -68,6 +69,8 @@ const search = ref('')
 const showNoResultMessage = ref(false)
 
 const fixed = ref(false)
+
+const isSearch = ref(false)
 
 const screenWidth = computed(() => {
   return state.data.screenWidth
@@ -174,6 +177,7 @@ function handleSearch (event) {
     : (projectsList.value = projectsListCopy.value)
 
   function search () {
+    isSearch.value = true
     projectsListCopy.value.filter(obj => {
       obj.title.toLowerCase().includes(event.toLowerCase()) && result.push(obj)
       obj.skills.forEach(skill => skill.toLowerCase().includes(event.toLowerCase()) && result.push(obj))
