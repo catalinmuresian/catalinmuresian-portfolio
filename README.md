@@ -1,6 +1,6 @@
-# Catalin Muresian Portfolio (mc-portfolio)
+# Catalin Muresian - Frontend Developer (mc-portfolio)
 
-Catalin Muresian Portfolio
+Catalin Muresian - Frontend Developer
 
 ## Install the dependencies
 ```bash

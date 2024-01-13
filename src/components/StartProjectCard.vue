@@ -1,5 +1,5 @@
 <template>
-  <div class="start-project-card">
+  <div id="start-project-card" class="start-project-card">
     <div class="container">
       <h4>Start a project</h4>
       <p>Interested in working together ? Let's schedule a call and turn your idea into a successful product.</p>

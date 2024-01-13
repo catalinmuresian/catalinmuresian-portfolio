@@ -1,5 +1,5 @@
 <template>
-  <div class="projects-section">
+  <div id="projects-section" class="projects-section">
     <q-dialog v-model="fixed">
       <q-card class="project-dialog">
         <q-card-section class="row items-center q-pb-none title-section-card">
@@ -24,7 +24,7 @@
       </q-card>
     </q-dialog>
     <div class="top">
-      <h2>Recent work</h2>
+      <h2>My portfolio</h2>
       <div class="search">
         <q-input placeholder="Search"
                  label-color="white"

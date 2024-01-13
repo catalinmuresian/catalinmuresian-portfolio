@@ -51,11 +51,11 @@ onMounted(() => {
     },
     {
       sectionName: 'button-hero',
-      delay: 1.2
+      delay: 1.6
     },
     {
       sectionName: 'image-hero',
-      delay: 1.2
+      delay: 0.6
 
     },
     ]
@@ -70,6 +70,7 @@ onMounted(() => {
       y: 0,
       opacity: 1,
       duration: 1.1,
+      scale: 1,
       delay: delay
     })
 

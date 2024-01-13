@@ -145,9 +145,9 @@ module.exports = configure(function (ctx) {
 
 
       manifest: {
-        name: `Catalin Muresian Portfolio`,
-        short_name: `Catalin Muresian Portfolio`,
-        description: `Catalin Muresian Portfolio`,
+        name: `Catalin Muresian - Frontend Developer`,
+        short_name: `Catalin Muresian - Frontend Developer`,
+        description: `Catalin Muresian - Frontend Developer`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

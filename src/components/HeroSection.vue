@@ -13,7 +13,7 @@
         </div>
         <MainButton
           class="button-tablet button-hero"
-          :name="'Contact Me'"
+          :name="'see my portfolio'"
           @handle-button="handleButton"
         />
       </div>
@@ -26,7 +26,7 @@
     </div>
     <MainButton
       class="button-mobile button-hero"
-      :name="'Contact Me'"
+      :name="'see my portfolio'"
       @handle-button="handleButton"
     />
   </div>
@@ -38,15 +38,15 @@
 import MainButton from '../components/MainButton'
 
 function handleButton () {
-    const element = document.getElementById('contact-section');
-    element.scrollIntoView({ behavior: 'instant' });
+    const element = document.getElementById('start-project-card');
+    element.scrollIntoView({block: 'start', behavior: 'instant' });
 }
 </script>
 
 <style lang="scss">
 .hero-section {
   margin-top: 20px;
-  .hi, .name, .role, .desc {
+  .hi, .name, .role, .desc, .button-hero {
     transform: translateY(-30px);
     opacity: 0;
   }
@@ -56,6 +56,8 @@ function handleButton () {
   }
   .image-hero {
     opacity: 0;
+    scale: 1.1;
+    transform: translateX(-30px);
   }
   .button-mobile {
     display: block;

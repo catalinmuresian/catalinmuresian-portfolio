@@ -1,8 +1,8 @@
 {
   "name": "mc-portfolio",
   "version": "0.0.1",
-  "description": "Catalin Muresian Portfolio",
-  "productName": "Catalin Muresian Portfolio",
+  "description": "Catalin Muresian - Frontend Developer",
+  "productName": "Catalin Muresian - Frontend Developer",
   "author": "mcatalin.dev@gmail.com",
   "private": true,
   "scripts": {

@@ -1,6 +1,6 @@
 <template>
   <SnowFlake />
-    <router-view/>
+  <router-view/>
 </template>
 
 <script setup>
