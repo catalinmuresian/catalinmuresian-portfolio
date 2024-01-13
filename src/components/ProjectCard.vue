@@ -1,9 +1,8 @@
 <template>
   <section
        :class="!isSearch ? 'animation-section' : 'remove-animation' "
-       class="project-card"
-       @click="openModal">
-    <q-card>
+       class="project-card">
+    <q-card @click="openModal">
       <img :src="`${img}`"
              loading="lazy"
              :alt="img">
@@ -88,9 +87,11 @@ function openModal () {
       display: flex;
       align-items: center;
       gap: 5px;
-      border: 1px solid #41B783FF;
-      padding: 2px 12px;
-      border-radius: 5px;
+      > a {
+        border: 1px solid #41B783FF;
+        padding: 2px 12px;
+        border-radius: 5px;
+      }
     }
     .skills {
       display: flex;

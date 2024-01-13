@@ -203,6 +203,7 @@ watch(() => projectsList.value, (value) => {
   z-index: 9999999;
   .project-dialog {
     overflow: hidden;
+    width: 100%;
     .title-section-card {
       display: flex;
       align-items: flex-start;
