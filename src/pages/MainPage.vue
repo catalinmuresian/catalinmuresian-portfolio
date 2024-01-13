@@ -58,7 +58,6 @@ onMounted(() => {
     {
       sectionName: 'image-hero',
       delay: 0.6
-
     },
     ]
 
@@ -97,7 +96,6 @@ onMounted(() => {
         start: start,
         end: 'bottom 100%',
       },
-      y: 0,
       opacity: 1,
       duration: 1,
     })
@@ -109,7 +107,6 @@ onMounted(() => {
         trigger: `.${sec}`,
         toggleActions: 'play none none none'
       },
-      y: 0,
       opacity: 1,
       duration: 1,
     })
@@ -122,11 +119,9 @@ onMounted(() => {
 
 <style lang="scss">
 .remove-animation {
-  transform: translate(0px, 0px) !important;
   opacity: 1 !important;
 }
 .animation-section {
-  transform: translate(0px, 50px);
   opacity: 0.5;
 }
 </style>
