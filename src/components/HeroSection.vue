@@ -38,8 +38,8 @@
 import MainButton from '../components/MainButton'
 
 function handleButton () {
-    const element = document.getElementById('start-project-card');
-    element.scrollIntoView({block: 'start', behavior: 'instant' });
+    const element = document.getElementById('hr');
+    element.scrollIntoView( {behavior: 'instant' });
 }
 </script>
 

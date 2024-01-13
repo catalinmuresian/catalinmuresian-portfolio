@@ -2,10 +2,10 @@
   <section
        :class="!isSearch ? 'animation-section' : 'remove-animation' "
        class="project-card">
-    <q-card @click="openModal">
-      <img :src="`${img}`"
+    <q-card style="width: 100%;" @click="openModal">
+      <q-img :src="`${img}`"
            loading="lazy"
-           :alt="img">
+           :alt="img" />
       <q-icon class="icon-open-full"
               color="grey-6"
               size="30px"
@@ -91,6 +91,9 @@ function openModal () {
         border: 1px solid #41B783FF;
         padding: 2px 12px;
         border-radius: 5px;
+      }
+      .q-spinner {
+        color: #41B783FF !important;
       }
     }
     .skills {

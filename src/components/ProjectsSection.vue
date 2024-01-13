@@ -271,21 +271,17 @@ watch(() => projectsList.value, (value) => {
     }
   }
   .projects-list {
-    display: flex;
-    flex-direction: column;
     gap: 60px;
-    align-items: center;
-    h3 {
-      display: flex;
-      justify-content: left;
-    }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+      h3 {
+        display: flex;
+        justify-content: left;
+      }
   }
   @media only screen and (min-width: 768px) {
-    .projects-list {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
     .top {
       margin-bottom: 60px;
       gap: 30px;

@@ -12,6 +12,7 @@ body {
   animation: moving 70s ease infinite;
 }
 
+
 @keyframes moving {
   0% {
     background-position: 0 50%;
@@ -56,6 +57,9 @@ h2, h3, h4 {
 }
 hr {
   border-color: grey;
+}
+.anim-hr {
+  opacity: 0;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

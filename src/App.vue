@@ -7,6 +7,9 @@
 import SnowFlake from './components/SnowFlake'
 
 
+
+
+
 </script>
 
 <style lang="scss">

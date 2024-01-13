@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf" ref="el">
+  <q-layout class="main-layout" view="lHh Lpr lFf" ref="el">
     <Nav />
       <q-page-container>
         <router-view />
@@ -31,5 +31,11 @@ watch(() => width.value, (value) => {
 </script>
 
 <style lang="scss">
+.main-layout {
+  .q-spinner {
+    width: 20px;
+    color: grey;
+  }
+}
 
 </style>

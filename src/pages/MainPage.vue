@@ -1,10 +1,11 @@
 <template>
   <q-page class="flex main-page column main-distance">
     <HeroSection  class="main-padding main-max-width"/>
-    <hr>
+    <hr class="anim-hr">
     <OurServicesSection  class="main-padding main-max-width our-services-section animation-section " />
     <SkillsSection  class="main-padding main-max-width animation-section" />
     <StartProjectCard  class="main-padding main-max-width animation-section" />
+    <hr class="anim-hr" id="hr" style="margin: 0;">
     <ProjectsSection  class="main-padding main-max-width animation-section" />
     <ContactSection />
   </q-page>
@@ -25,6 +26,7 @@ onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
 
   const sections = document.querySelectorAll('section')
+  const hr = document.querySelectorAll('hr')
   const mainSections = [
     'nav',
     'our-services-section',
@@ -60,6 +62,17 @@ onMounted(() => {
     },
     ]
 
+  hr.forEach(sec => {
+    gsap.to(sec, {
+      scrollTrigger: {
+        trigger: sec,
+        toggleActions: 'play none none none'
+      },
+      opacity: 1,
+      duration: 1
+    })
+
+  })
   heroSectionsAnim.forEach(({sectionName, delay}) => {
     gsap.to(`.${sectionName}`, {
       scrollTrigger: {
@@ -71,7 +84,7 @@ onMounted(() => {
       opacity: 1,
       duration: 1.1,
       scale: 1,
-      delay: delay
+      delay: delay,
     })
 
   })
