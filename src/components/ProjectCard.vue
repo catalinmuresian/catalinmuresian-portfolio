@@ -4,8 +4,8 @@
        class="project-card">
     <q-card @click="openModal">
       <img :src="`${img}`"
-             loading="lazy"
-             :alt="img">
+           loading="lazy"
+           :alt="img">
       <q-icon class="icon-open-full"
               color="grey-6"
               size="30px"
