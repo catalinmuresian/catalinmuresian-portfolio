@@ -125,7 +125,7 @@ onMounted(() => {
   opacity: 1 !important;
 }
 .animation-section {
-  transform: translate(0px, 30px);
+  transform: translate(0px, 40px);
   opacity: 0.5;
 }
 </style>
