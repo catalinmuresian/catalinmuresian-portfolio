@@ -4,7 +4,8 @@ export const state = {
   isFetching: false,
   screenWidth: null,
   reqStatus: null,
-  reqMessage: null
+  reqMessage: null,
+  mainImageLoaded: false
 }
 
 export const actions = {
@@ -35,6 +36,9 @@ export const actions = {
 }
 
 export const mutations = {
+  MAIN_IMAGE_LOADED (state, value) {
+    state.mainImageLoaded = value
+  },
   SET_REQ_MESSAGE (state, value) {
     state.reqMessage = value
   },

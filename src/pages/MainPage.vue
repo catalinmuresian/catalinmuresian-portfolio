@@ -20,47 +20,59 @@ import StartProjectCard from "components/StartProjectCard";
 import OurServicesSection from "components/OurServicesSection";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {onMounted} from "vue";
+import {computed, onMounted, watch} from "vue";
+import {useStore} from "vuex";
+const { state } = useStore()
+
+let sections
+let hr
+const mainSections = [
+  'nav',
+  'our-services-section',
+  'skills-section',
+  'start-project-card',
+  'projects-section',
+  'contact-section-anim'
+]
+const heroSectionsAnim = [
+  {
+    sectionName: 'hi',
+  },
+  {
+    sectionName: 'name',
+    delay: 0.6
+  },
+  {
+    sectionName: 'role',
+    delay: 0.8
+  },
+  {
+    sectionName: 'desc',
+    delay: 1
+  },
+  {
+    sectionName: 'button-hero',
+    delay: 1.6
+  },
+  {
+    sectionName: 'image-hero',
+    delay: 0.6
+  },
+]
+
+const mainImageLoaded = computed(() => {
+  return state.data.mainImageLoaded
+})
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
+  sections = document.querySelectorAll('section')
+  hr = document.querySelectorAll('hr')
 
-  const sections = document.querySelectorAll('section')
-  const hr = document.querySelectorAll('hr')
-  const mainSections = [
-    'nav',
-    'our-services-section',
-    'skills-section',
-    'start-project-card',
-    'projects-section',
-    'contact-section-anim'
-  ]
-  const heroSectionsAnim = [
-    {
-      sectionName: 'hi',
-    },
-    {
-      sectionName: 'name',
-      delay: 0.6
-    },
-    {
-      sectionName: 'role',
-      delay: 0.8
-    },
-    {
-      sectionName: 'desc',
-      delay: 1
-    },
-    {
-      sectionName: 'button-hero',
-      delay: 1.6
-    },
-    {
-      sectionName: 'image-hero',
-      delay: 0.6
-    },
-    ]
 
+})
+
+function start () {
   hr.forEach(sec => {
     gsap.to(sec, {
       scrollTrigger: {
@@ -70,7 +82,6 @@ onMounted(() => {
       opacity: 1,
       duration: 1
     })
-
   })
   heroSectionsAnim.forEach(({sectionName, delay}) => {
     gsap.to(`.${sectionName}`, {
@@ -85,7 +96,6 @@ onMounted(() => {
       scale: 1,
       delay: delay,
     })
-
   })
   sections.forEach(sec => {
     const start = sec.className === 'services-card animation-section' ? '-100px 100%' : '-150px 100%';
@@ -110,11 +120,12 @@ onMounted(() => {
       opacity: 1,
       duration: 1,
     })
-
-
   })
-})
+}
 
+watch(() => mainImageLoaded.value, (value) => {
+  value && start()
+}, { deep: true})
 </script>
 
 <style lang="scss">

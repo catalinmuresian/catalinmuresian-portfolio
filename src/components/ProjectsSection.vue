@@ -166,7 +166,6 @@ const selectedProject = ref({})
 
 function handleOpenModal ({title, img, skills, id, link}) {
   if (screenWidth.value >= 768) {
-    console.log(screenWidth.value >= 768)
     fixed.value = true
     selectedProject.value = {title, img, skills, id, link}
   }

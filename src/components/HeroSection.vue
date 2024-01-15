@@ -1,5 +1,6 @@
 <template>
   <div class="hero-section">
+    <q-btn @click="aaa()"></q-btn>
     <div class="top">
       <div class="text">
         <div class="top-text">
@@ -19,6 +20,7 @@
       </div>
       <div class="portrait-image image-hero">
         <q-img
+          @load="mainImageLoaded()"
           loading="lazy"
           src="../assets/cm-main-image.png"
           alt="cm-main-image" />
@@ -36,10 +38,17 @@
 <script setup>
 
 import MainButton from '../components/MainButton'
+import {useStore} from "vuex";
+
+const { commit } = useStore()
 
 function handleButton () {
     const element = document.getElementById('hr');
     element.scrollIntoView( {behavior: 'instant' });
+}
+
+function mainImageLoaded () {
+  commit('MAIN_IMAGE_LOADED', true)
 }
 </script>
 
