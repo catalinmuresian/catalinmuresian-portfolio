@@ -11,15 +11,6 @@ body {
   background-image: url('../assets/back.png');
 }
 
-::-webkit-scrollbar {
-  height: 12px;
-  width: 14px;
-  background-color: #303030;
-  z-index: 12;
-  overflow: visible;
-
-}
-
 ::-webkit-scrollbar-thumb {
   width: 10px;
   opacity: 0;

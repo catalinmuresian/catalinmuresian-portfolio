@@ -129,8 +129,7 @@ watch(() => mainImageLoaded.value, (value) => {
 
 <style lang="scss">
 .overflow-scroll {
-  overflow-x: scroll;
-  overflow-y: scroll;
+  position: relative;
 }
 .remove-animation {
   opacity: 1 !important;
