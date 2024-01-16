@@ -32,10 +32,4 @@ watch(() => mainImageLoaded.value, (value) => {
 
 <style lang="scss">
 
-
-
-body {
-  background-color: var(back_img);;
-}
-
 </style>

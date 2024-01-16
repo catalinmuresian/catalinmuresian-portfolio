@@ -1,6 +1,5 @@
 <template>
   <div class="hero-section">
-    <q-btn @click="aaa()"></q-btn>
     <div class="top">
       <div class="text">
         <div class="top-text">
