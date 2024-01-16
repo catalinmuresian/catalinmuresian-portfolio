@@ -1,5 +1,6 @@
 <template>
   <SnowFlake />
+  <MainSpinner v-if="!mainImageLoaded" />
   <router-view/>
 </template>
 
@@ -8,6 +9,7 @@ import SnowFlake from './components/SnowFlake'
 import {useStore} from "vuex";
 import {computed, watch} from "vue";
 import { useQuasar, QSpinnerGears } from 'quasar'
+import MainSpinner from './components/MainSpinner'
 const $q = useQuasar()
 
 const { state } = useStore()
@@ -16,13 +18,13 @@ const mainImageLoaded = computed(() => {
   return state.data.mainImageLoaded
 })
 
-$q.loading.show({
-  spinner: QSpinnerGears,
-  spinnerColor: 'yellow',
-  spinnerSize: 60,
-  backgroundColor: '#303030',
-  messageColor: 'white',
-})
+// $q.loading.show({
+//   spinner: QSpinnerGears,
+//   spinnerColor: 'yellow',
+//   spinnerSize: 60,
+//   backgroundColor: '#303030',
+//   messageColor: 'white',
+// })
 
 watch(() => mainImageLoaded.value, (value) => {
   value && $q.loading.hide()
@@ -31,5 +33,5 @@ watch(() => mainImageLoaded.value, (value) => {
 </script>
 
 <style lang="scss">
-
 </style>
+

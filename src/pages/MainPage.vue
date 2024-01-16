@@ -68,11 +68,10 @@ onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
   sections = document.querySelectorAll('section')
   hr = document.querySelectorAll('hr')
-
-
 })
 
 function start () {
+  document.getElementById('body').classList.add('overflow-scroll')
   hr.forEach(sec => {
     gsap.to(sec, {
       scrollTrigger: {
@@ -129,6 +128,10 @@ watch(() => mainImageLoaded.value, (value) => {
 </script>
 
 <style lang="scss">
+.overflow-scroll {
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
 .remove-animation {
   opacity: 1 !important;
 }
