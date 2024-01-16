@@ -4,20 +4,11 @@
   margin: 0;
   padding: 0;
 }
-//:root {
-//  --q-dark-page: #303030;
-//}
-//
-//.body--light {
-//  background-color: #303030;
-//}
 
 body {
   background-size: 100%;
   height: 100vh;
-  animation: moving 70s ease infinite;
-
-  background-image: url('../assets/back.jpg');
+  background-image: url('../assets/back.png');
   overflow-y: scroll !important;
 }
 
@@ -44,28 +35,6 @@ body {
   min-height: 32px;
   min-width: 32px;
 }
-
-
-
-//.q-body--prevent-scroll {
-//  position: fixed !important;
-//}
-////
-//.q-body--force-scrollbar-y {
-//  overflow: scroll !important;
-//}
-
-  //@keyframes moving {
-//  0% {
-//    background-position: 0 50%;
-//  }
-//  50% {
-//    background-position: 100% 50%;
-//  }
-//  100% {
-//    background-position: 0 50%;
-//  }
-//}
 
 .q-field__native {
   color: $white;
