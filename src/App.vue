@@ -1,5 +1,4 @@
 <template>
-  <SnowFlake />
   <MainSpinner v-if="!mainImageLoaded" />
   <router-view/>
 </template>
@@ -17,14 +16,6 @@ const { state } = useStore()
 const mainImageLoaded = computed(() => {
   return state.data.mainImageLoaded
 })
-
-// $q.loading.show({
-//   spinner: QSpinnerGears,
-//   spinnerColor: 'yellow',
-//   spinnerSize: 60,
-//   backgroundColor: '#303030',
-//   messageColor: 'white',
-// })
 
 watch(() => mainImageLoaded.value, (value) => {
   value && $q.loading.hide()
